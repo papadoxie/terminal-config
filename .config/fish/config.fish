@@ -27,6 +27,20 @@ if test -d ~/Applications/depot_tools
     end
 end
 
+# Add cargo to PATH
+if test -d ~/.cargo/bin
+    if not contains -- ~/.cargo/bin $PATH
+        set -p PATH ~/.cargo/bin
+    end
+end
+
+# Add Ghidra to PATH
+
+if test -d ~/Hacking/Ghidra
+    if not contains -- ~/Hacking/Ghidra $PATH
+        set -p PATH ~/Hacking/Ghidra
+    end
+end
 
 ## Starship prompt
 source (starship init fish --print-full-init | psub)
