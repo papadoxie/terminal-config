@@ -8,7 +8,6 @@ endif
 "Load Plugins
 call plug#begin('~/vim/plugged')
 
-Plug 'larsbs/vimterial_dark'
 Plug 'KeitaNakamura/neodark.vim'
 Plug 'jremmen/vim-ripgrep'
 Plug 'tpope/vim-fugitive'
@@ -41,5 +40,6 @@ set noeb vb t_vb=
 au GUIEnter * set vb t_vb=
 
 "Colorscheme Settings
-let g:neodark#terminal_transparent = 1 
+let g:neodark#terminal_transparent = 1
+let g:neodark#use_256color = 1
 colorscheme neodark
