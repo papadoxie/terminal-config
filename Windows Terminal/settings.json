@@ -42,7 +42,7 @@
     "alwaysShowTabs": true,
     "copyFormatting": "none",
     "copyOnSelect": true,
-    "defaultProfile": "{46ca431a-3a87-5fb3-83cd-11ececc031d2}",
+    "defaultProfile": "{2c4de342-38b7-51cf-b940-2309a097f518}",
     "initialCols": 140,
     "initialRows": 40,
     "keybindings": null,
@@ -78,21 +78,20 @@
                 "source": "Windows.Terminal.Azure"
             },
             {
-                "colorScheme": "Argonaut",
+                "colorScheme": "Argonaut Dark",
                 "cursorColor": "#FF1E27",
                 "cursorShape": "filledBox",
                 "fontFace": "DankMono Nerd Font Mono",
+                "fontSize": 12,
+                "fontWeight": "normal",
                 "guid": "{2c4de342-38b7-51cf-b940-2309a097f518}",
                 "hidden": false,
-                "fontSize": 12,
-               "fontWeight": "normal",
-                "startingDirectory": "\\\\wsl$\\Ubuntu\\home\\papadoxie",
-	   "suppressApplicationTitle": true,
-             "useAcrylic": false,
                 "name": "Ubuntu",
+                "source": "Windows.Terminal.Wsl",
+                "startingDirectory": "\\\\wsl$\\Ubuntu\\home\\papadoxie",
                 "suppressApplicationTitle": true,
-                "source": "Windows.Terminal.Wsl"
-             }
+                "useAcrylic": false
+            }
         ]
     },
     "schemes": 
@@ -114,6 +113,29 @@
             "foreground": "#FFFAF4",
             "green": "#8CE10B",
             "name": "Argonaut",
+            "purple": "#6D43A6",
+            "red": "#FF000F",
+            "selectionBackground": "#002A3B",
+            "white": "#FFFFFF",
+            "yellow": "#FFB900"
+        },
+        {
+            "background": "#1A1A1A",
+            "black": "#232323",
+            "blue": "#008DF8",
+            "brightBlack": "#444444",
+            "brightBlue": "#0092FF",
+            "brightCyan": "#67FFF0",
+            "brightGreen": "#ABE15B",
+            "brightPurple": "#9A5FEB",
+            "brightRed": "#FF2740",
+            "brightWhite": "#FFFFFF",
+            "brightYellow": "#FFD242",
+            "cursorColor": "#FF0018",
+            "cyan": "#00D8EB",
+            "foreground": "#FFFAF4",
+            "green": "#8CE10B",
+            "name": "Argonaut Dark",
             "purple": "#6D43A6",
             "red": "#FF000F",
             "selectionBackground": "#002A3B",

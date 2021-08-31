@@ -13,6 +13,9 @@ set -U __done_notification_urgency_level low
 #  Apply .profile
 #  source ~/.profile
 
+# Set up systemd genie
+# exec /usr/local/bin/genie -s 
+
 # Add ~/.local/bin to PATH
 if test -d ~/.local/bin
     if not contains -- ~/.local/bin $PATH
@@ -167,6 +170,8 @@ if type "wal" >> /dev/null 2>&1
    cat ~/.cache/wal/sequences
 end
 
+## Start ssh-agent
+fish_ssh_agent
 
 ## Run neofetch if session is interactive
 if status --is-interactive
