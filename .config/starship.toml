@@ -69,14 +69,14 @@ disabled = true
 # Prompt: param 2 └─
 [character]
 success_symbol = " [╰─λ](bold red)"
-error_symbol = " [×](bold red)"
+error_symbol = ' [╰─\[×\]](bold red)'
 
 # SYMBOLS
 [status]
 symbol = "🔴"
 format = '[\[$symbol$status_common_meaning$status_signal_name$status_maybe_int\]]($style)'
 map_symbol = true
-disabled = false
+disabled = true
 
 [aws]
 symbol = " "
