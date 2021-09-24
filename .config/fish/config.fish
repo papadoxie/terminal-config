@@ -2,7 +2,7 @@
 # Hide welcome message
 set fish_greeting
 set VIRTUAL_ENV_DISABLE_PROMPT "1"
-set -x MANPAGER "sh -c 'col -bx | batcat -l man -p'"
+set -x MANPAGER "sh -c 'col -bx | bat -l man -p'"
 
 # Set settings for https://github.com/franciscolourenco/done
 set -U __done_min_cmd_duration 10000
@@ -13,8 +13,6 @@ set -U __done_notification_urgency_level low
 #  Apply .profile
 #  source ~/.profile
 
-# Set up systemd genie
-# exec /usr/local/bin/genie -s 
 
 # Add ~/.local/bin to PATH
 if test -d ~/.local/bin
@@ -117,7 +115,7 @@ alias lt='exa -aT --color=always --group-directories-first --icons'  # tree list
 alias l.="exa -a | egrep '^\.'"                                      # show only dotfiles
 
 # Replace some more things with better alternatives
-alias cat='batcat' #--style header --style rules --style snip --style changes --style header'
+alias cat='bat' #--style header --style rules --style snip --style changes --style header'
 
 # Common use
 alias grubup="sudo update-grub"
@@ -137,6 +135,13 @@ alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
 alias hw='hwinfo --short'                                   # Hardware Info
+alias big="expac -H M '%m\t%n' | sort -h | nl"              # Sort installed packages according to size in MB
+
+# Get fastest mirrors 
+alias mirror="sudo reflector -f 30 -l 30 --number 10 --verbose --save /etc/pacman.d/mirrorlist" 
+alias mirrord="sudo reflector --latest 50 --number 20 --sort delay --save /etc/pacman.d/mirrorlist" 
+alias mirrors="sudo reflector --latest 50 --number 20 --sort score --save /etc/pacman.d/mirrorlist" 
+alias mirrora="sudo reflector --latest 50 --number 20 --sort age --save /etc/pacman.d/mirrorlist" 
 
 # Help people new to Arch
 alias helpme='cht.sh --shell'
@@ -147,18 +152,19 @@ alias paru="paru --bottomup"
 # Get the error messages from journalctl
 alias jctl="journalctl -p 3 -xb"
 
-# APT Aliases
-alias pinstall="sudo apt update && sudo apt install"
-alias psearch="apt search"
-alias pupgrade="sudo apt update && sudo apt upgrade -y"
-alias premove="sudo apt remove && sudo apt autoremove"
-alias pfix="sudo apt update --fix-missing"
+# Pacman Aliases
+alias pinstall="sudo pacman -S"
+alias psearch="pacman -Ss"
+alias pupgrade="sudo pacman -Syu"
+alias premove="sudo pacman -Rns"
+alias pfix="sudo rm /var/lib/pacman/db.lck"
+alias cleanup="sudo pacman -Rns (pacman -Qtdq)"
 
 # Recent installed packages
 alias rip="expac --timefmt='%Y-%m-%d %T' '%l\t%n %v' | sort | tail -200 | nl"
 
 #Open Fish Config
-alias fishconfig="sudo vim ~/.config/fish/config.fish"
+alias fishconfig="vim ~/.config/fish/config.fish"
 
 #Python aliases
 alias py=python3
