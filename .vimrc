@@ -9,7 +9,6 @@ endif
 call plug#begin('~/vim/plugged')
 
 Plug 'KeitaNakamura/neodark.vim'
-Plug 'jremmen/vim-ripgrep'
 Plug 'tpope/vim-fugitive'
 Plug 'vim-utils/vim-man'
 Plug 'https://github.com/kien/ctrlp.vim.git'
