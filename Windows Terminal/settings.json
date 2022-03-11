@@ -1,13 +1,12 @@
 {
+    "$help": "https://aka.ms/terminal-documentation",
     "$schema": "https://aka.ms/terminal-profiles-schema",
-    // Add custom actions and keybindings to this array.
-    // To unbind a key combination from your defaults.json, set the command to "unbound".
-    // To learn more about actions and keybindings, visit https://aka.ms/terminal-keybindings
     "actions": 
     [
-        // Copy and paste are bound to Ctrl+Shift+C and Ctrl+Shift+V in your defaults.json.
-        // These two lines additionally bind them to Ctrl+C and Ctrl+V.
-        // To learn more about selection, visit https://aka.ms/terminal-selection
+        {
+            "command": "paste",
+            "keys": "ctrl+v"
+        },
         {
             "command": 
             {
@@ -17,18 +16,9 @@
             "keys": "ctrl+c"
         },
         {
-            "command": "paste",
-            "keys": "ctrl+v"
-        },
-        // Press Ctrl+Shift+F to open the search box
-        {
             "command": "find",
             "keys": "ctrl+shift+f"
         },
-        // Press Alt+Shift+D to open a new pane.
-        // - "split": "auto" makes this pane open in the direction that provides the most surface area.
-        // - "splitMode": "duplicate" makes the new pane use the focused pane's profile.
-        // To learn more about panes, visit https://aka.ms/terminal-panes
         {
             "command": 
             {
@@ -42,31 +32,44 @@
     "alwaysShowTabs": true,
     "copyFormatting": "none",
     "copyOnSelect": true,
-    "defaultProfile": "{2c4de342-38b7-51cf-b940-2309a097f518}",
+    "defaultProfile": "{a5a97cb8-8961-5535-816d-772efe0c6a3f}",
     "initialCols": 140,
     "initialRows": 40,
-    "keybindings": null,
+    "launchMode": "default",
     "profiles": 
     {
-        "defaults": {},
+        "defaults": 
+        {
+            "backgroundImage": null,
+            "colorScheme": "Argonaut Dark",
+            "cursorShape": "filledBox",
+            "font": 
+            {
+                "face": "DankMono Nerd Font Mono"
+            }
+        },
         "list": 
         [
             {
                 "colorScheme": "Argonaut",
-                "commandline": "powershell.exe",
                 "cursorColor": "#FFFFFF",
                 "cursorShape": "filledBox",
-                "fontFace": "Dank Mono",
+                "font": 
+                {
+                    "face": "Dank Mono"
+                },
                 "guid": "{61c54bbd-c2c6-5271-96e7-009a87ff44bf}",
                 "hidden": false,
                 "name": "Windows PowerShell"
             },
             {
                 "colorScheme": "Retro",
-                "commandline": "cmd.exe",
                 "cursorShape": "vintage",
                 "experimental.retroTerminalEffect": true,
-                "fontSize": 12,
+                "font": 
+                {
+                    "size": 12
+                },
                 "guid": "{0caa0dad-35be-5f56-a8ff-afceeeaa6101}",
                 "hidden": false,
                 "name": "Command Prompt"
@@ -78,19 +81,38 @@
                 "source": "Windows.Terminal.Azure"
             },
             {
+                "backgroundImageOpacity": 1.0,
                 "colorScheme": "Argonaut Dark",
                 "cursorColor": "#FF1E27",
                 "cursorShape": "filledBox",
-                "fontFace": "DankMono Nerd Font Mono",
-                "fontSize": 12,
-                "fontWeight": "normal",
-                "guid": "{2c4de342-38b7-51cf-b940-2309a097f518}",
+                "experimental.retroTerminalEffect": false,
+                "font": 
+                {
+                    "face": "DankMono Nerd Font Mono",
+                    "size": 12,
+                    "weight": "normal"
+                },
+                "guid": "{a5a97cb8-8961-5535-816d-772efe0c6a3f}",
                 "hidden": false,
-                "name": "Ubuntu",
+                "intenseTextStyle": "bright",
+                "name": "Arch",
+                "opacity": 100,
                 "source": "Windows.Terminal.Wsl",
-                "startingDirectory": "\\\\wsl$\\Ubuntu\\home\\papadoxie",
-                "suppressApplicationTitle": true,
+                "startingDirectory": "\\\\wsl$\\Arch\\home\\papadoxie",
+                "suppressApplicationTitle": false,
                 "useAcrylic": false
+            },
+            {
+                "guid": "{6a7bed3a-2b26-5598-a4a9-40b899e61da1}",
+                "hidden": false,
+                "name": "Developer Command Prompt for VS 2019",
+                "source": "Windows.Terminal.VisualStudio"
+            },
+            {
+                "guid": "{22ad40cb-da5c-5cf3-95a0-347a9728f1af}",
+                "hidden": false,
+                "name": "Developer PowerShell for VS 2019",
+                "source": "Windows.Terminal.VisualStudio"
             }
         ]
     },
@@ -422,5 +444,6 @@
     "tabSwitcherMode": "inOrder",
     "tabWidthMode": "equal",
     "theme": "dark",
+    "useAcrylicInTabRow": false,
     "windowingBehavior": "useExisting"
 }
