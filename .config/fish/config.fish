@@ -170,6 +170,11 @@ alias fishconfig="vim ~/.config/fish/config.fish"
 alias py=python3
 alias py2=python2
 
+# Launch Obsidian
+alias obsidian="obsidian 1> /dev/null 2> /dev/null" 
+
+#Setup Emscripten Environment
+alias emsdk_setup="source ~/Code/emsdk/emsdk_env.fish"
 
 ## Import colorscheme from 'wal' asynchronously
 if type "wal" >> /dev/null 2>&1
