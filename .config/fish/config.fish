@@ -9,11 +9,6 @@ set -U __done_min_cmd_duration 10000
 set -U __done_notification_urgency_level low
 
 
-## Environment setup
-#  Apply .profile
-#  source ~/.profile
-
-
 # Add ~/.local/bin to PATH
 if test -d ~/.local/bin
     if not contains -- ~/.local/bin $PATH
@@ -36,12 +31,14 @@ if test -d ~/.cargo/bin
 end
 
 # Add Ghidra to PATH
-
 if test -d ~/Hacking/Ghidra
     if not contains -- ~/Hacking/Ghidra $PATH
         set -p PATH ~/Hacking/Ghidra
     end
 end
+
+# Set variables for valgrind
+export DEBUGINFOD_URLS="https://debuginfod.archlinux.org"
 
 ## Starship prompt
 source (starship init fish --print-full-init | psub)
@@ -183,6 +180,7 @@ end
 
 ## Start ssh-agent
 fish_ssh_agent
+alias buttconnect="ssh butt_sahab\\\buttw@buttsahab.com"
 
 ## Run neofetch if session is interactive
 if status --is-interactive
