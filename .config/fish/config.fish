@@ -170,8 +170,11 @@ alias py2=python2
 # Launch Obsidian
 alias obsidian="obsidian 1> /dev/null 2> /dev/null" 
 
-#Setup Emscripten Environment
+# Setup Emscripten Environment
 alias emsdk_setup="source ~/Code/emsdk/emsdk_env.fish"
+
+# Cleanup old files from /tmp
+alias cleantmp="find /tmp -ctime +10 -exec rm -rf {} +"
 
 ## Import colorscheme from 'wal' asynchronously
 if type "wal" >> /dev/null 2>&1
@@ -184,6 +187,6 @@ alias buttconnect="ssh butt_sahab\\\buttw@buttsahab.com"
 
 ## Run neofetch if session is interactive
 if status --is-interactive
-   neofetch --ascii_distro arch
+	pfetch
 end
 
